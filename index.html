@@ -1,0 +1,12 @@
+<?php
+$file_path = '/appdata/slot-app.yaml';
+
+if (file_exists($file_path)) {
+    header('Content-Type: application/x-yaml');
+    header('Content-Disposition: attachment; filename="slot-app.yaml"');
+    readfile($file_path);
+    exit;
+} else {
+    echo "Arquivo não encontrado.";
+}
+?>
